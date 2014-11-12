@@ -28,6 +28,6 @@
     "webpack-dev-server": "^1.6.5"
   },
   "dependencies": {
-    "ngrequire": "https://www.dropbox.com/s/ukxz18k1bzqtx1i/ngrequire.tgz?dl=1"
+    "ngrequire": "^2.0.16"
   }
 }
