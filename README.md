@@ -7,14 +7,14 @@ A webpack plugin to handle Angular module dependencies
 With configuration of `new ngRequirePlugin([ './**/*.js' ])`
 
 ./a.js
-```
+```javascript
 angular.module('a', [])
   .factory('test', function(){
   });
 ```
 
 ./b.js
-```
+```javascript
 angular.module('b', [])
   .controller('controllerB', function (test) {
     // Module 'a' will be automatically required.
@@ -25,7 +25,7 @@ angular.module('b', [])
 #Usage
 
 For more detailed usage please see ./test
-```
+```javascript
 var ngRequirePlugin = require('ngrequire-webpack-plugin');
 
 {
