@@ -1,6 +1,6 @@
 {
   "name": "ngrequire-webpack-plugin",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "A webpack plugin to automatic require AngularJS modules",
   "main": "index.js",
   "scripts": {
