@@ -29,7 +29,9 @@ For more detailed usage please see ./test
 var ngRequirePlugin = require('ngrequire-webpack-plugin');
 
 {
-  plugins: [ new ngRequirePlugin(['gulp-like file path list for your angular modules']) ]
+  plugins: [
+    new ngRequirePlugin(['gulp-like file path list for your angular modules'])
+  ]
 }
 
 ```
