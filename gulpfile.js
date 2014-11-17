@@ -32,5 +32,5 @@ gulp.task('release', function () {
     // copy file
     gulp.src('')
         .pipe(shell(['npm version patch']))
-        .pipe(shell(['npm pack']));
+        .pipe(shell(['npm publish']));
 });
