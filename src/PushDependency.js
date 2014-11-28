@@ -17,15 +17,15 @@ PushDependency.prototype = Object.create(NullDependency.prototype);
 PushDependency.Template = function PushDependencyTemplate() {};
 
 PushDependency.Template.prototype.apply = function(dep, source, outputOptions, requestShortener) {
-    var requiredModuleNames = Object.keys(dep.requiredModules);
+    var requiredModules = dep.requiredModules;
 
-    if (requiredModuleNames.length === 0) {
+    if (requiredModules.length === 0) {
         // Do not proceed if nothing to require
         return;
     }
 
     var moduleNames = [];
-    requiredModuleNames.forEach(function (requiredModuleName) {
+    requiredModules.forEach(function (requiredModuleName) {
         moduleNames.push(requiredModuleName);
     });
 

@@ -2,6 +2,7 @@ var ModuleParserHelpers = require('webpack/lib/ModuleParserHelpers');
 var NullFactory = require('webpack/lib/NullFactory');
 var PushDependency = require('./src/PushDependency');
 var ngrequire = require('ngrequire');
+var _ = require('lodash');
 var s = require('./src/string');
 
 function apply(options, compiler) {
@@ -28,12 +29,13 @@ function apply(options, compiler) {
         if (meta) {
             ModuleParserHelpers.addParsedVariable(compiler.parser, '__ngrequire_load__', moduleLoaderStatement);
             var deps = ngrequire.getMissingDependencies(filePath);
-            var currentModule = meta.moduleName, requiredModules = {};
-            deps.forEach(function (dep) {
-                requiredModules[dep.moduleName] = dep.relativePath;
+            var currentModule = meta.moduleName;
+            var requiredModules = _.unique(_.pluck(deps, 'moduleName'));
+            var relativePaths = _.unique(_.pluck(deps, 'relativePath'));
 
-                var normalizedName = '__ngrequire_module_{0}__'.f(dep.moduleName.replace(/[\W]/g, ''));
-                ModuleParserHelpers.addParsedVariable(compiler.parser, normalizedName, requireStatement.f(dep.relativePath));
+            _.each(relativePaths, function (relativePath, index) {
+                var normalizedName = '__ngrequire_module_{0}__'.f(index);
+                ModuleParserHelpers.addParsedVariable(compiler.parser, normalizedName, requireStatement.f(relativePath));
             });
 
             self.state.current.addDependency(new PushDependency(currentModule, requiredModules, expression));

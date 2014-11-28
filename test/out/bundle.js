@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(angular, __ngrequire_load__, __ngrequire_module_wrapper__, __ngrequire_module_cal__) {__webpack_require__(1);
+	/* WEBPACK VAR INJECTION */(function(angular, __ngrequire_load__, __ngrequire_module_0__, __ngrequire_module_1__) {__webpack_require__(1);
 
 	// Test standard way of specifying dependency
 	__ngrequire_load__('program', 'wrapper', 'cal', 'aThirdParty');
@@ -84,7 +84,7 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(angular, __ngrequire_load__, __ngrequire_module_math__) {/* WEBPACK VAR INJECTION */(function(__ngrequire_module_math__) {// Shortcut way
+	/* WEBPACK VAR INJECTION */(function(angular, __ngrequire_load__, __ngrequire_module_0__, __ngrequire_module_1__) {// Shortcut way
 	__ngrequire_load__('cal', 'math');
 
 	angular.module('cal', [])
@@ -93,7 +93,7 @@
 	        return minus(add(val, 10), 2);
 	    }
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))}.call(exports, __webpack_require__(4), __webpack_require__(5), __webpack_require__(6)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5), __webpack_require__(6), __webpack_require__(7)))
 
 /***/ },
 /* 4 */
