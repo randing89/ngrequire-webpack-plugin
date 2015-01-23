@@ -8,7 +8,7 @@
     "url": "https://github.com/randing89/ngrequire-webpack-plugin"
   },
   "scripts": {
-    "test": "./node_modules/gulp/bin/gulp.js test-once"
+    "test": "./node_modules/gulp/bin/gulp.js test"
   },
   "author": "Ran Ding",
   "license": "MIT",
@@ -21,8 +21,8 @@
     "gulp-karma": "0.0.4",
     "gulp-shell": "^0.2.10",
     "gulp-webpack": "^1.0.0",
-    "jsdom": "^1.1.0",
-    "karma": "^0.12.24",
+    "jsdom": "^3.0.2",
+    "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.9",
     "karma-phantomjs-launcher": "^0.1.4",
