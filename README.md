@@ -1,6 +1,8 @@
 ngrequire-webpack-plugin
 ========================
 
+[![Build Status](https://travis-ci.org/randing89/ngrequire.svg)](https://travis-ci.org/randing89/ngrequire)
+
 A webpack plugin to handle Angular module dependencies
 
 #Example
