@@ -18,7 +18,7 @@
     "chai": "^1.9.2",
     "exports-loader": "^0.6.2",
     "gulp": "^3.8.10",
-    "gulp-karma": "0.0.4",
+    "gulp-karma": "^0.1.2",
     "gulp-shell": "^0.2.10",
     "gulp-webpack": "^1.0.0",
     "handlebars": "^2.0.0",
