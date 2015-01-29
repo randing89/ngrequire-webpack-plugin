@@ -3,6 +3,8 @@ ngrequire-webpack-plugin
 
 [![Build Status](https://travis-ci.org/randing89/ngrequire-webpack-plugin.svg?branch=master)](https://travis-ci.org/randing89/ngrequire-webpack-plugin)
 [![Coverage Status](https://coveralls.io/repos/randing89/ngrequire-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/r/randing89/ngrequire-webpack-plugin?branch=master)
+[![Dependency Status](https://gemnasium.com/randing89/ngrequire-webpack-plugin.svg)](https://gemnasium.com/randing89/ngrequire-webpack-plugin)
+
 
 A webpack plugin to handle Angular module dependencies
 
