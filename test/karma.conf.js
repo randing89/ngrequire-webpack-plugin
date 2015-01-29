@@ -1,10 +1,16 @@
 var path = require('path');
 
+var currentPath = path.resolve(__dirname);
+
 module.exports = function (config) {
     config.set({
-        basePath: path.join(path.resolve(__dirname), 'fixture'),
+        basePath: path.join(currentPath, 'fixture'),
         frameworks: ['mocha', 'chai'],
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage', 'coveralls'],
+        coverageReporter: {
+            type: 'lcov',
+            dir: path.join(currentPath, '../coverage')
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_DEBUG,
