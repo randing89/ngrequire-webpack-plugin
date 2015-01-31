@@ -6,6 +6,9 @@ var _ = require('lodash');
 var s = require('./src/string');
 
 function apply(options, compiler) {
+    // Clean cache
+    ngrequire.clean();
+
     compiler.plugin('compilation', function(compilation, params) {
         compilation.dependencyFactories.set(PushDependency, new NullFactory());
         compilation.dependencyTemplates.set(PushDependency, new PushDependency.Template());
@@ -38,7 +41,7 @@ function apply(options, compiler) {
                 ModuleParserHelpers.addParsedVariable(compiler.parser, normalizedName, requireStatement.f(relativePath));
             });
 
-            self.state.current.addDependency(new PushDependency(currentModule, requiredModules, expression));
+            self.state.current.addDependency(new PushDependency(currentModule, requiredModules, filePath, expression));
         }
     });
 }
@@ -55,7 +58,7 @@ module.exports = function(options) {
     }
 
     // Change all path to absolute
-    var cwd = process.cwd();
+    var cwd = options.basePath || process.cwd();
     options.include = options.include.map(function (include) {
         return path.resolve(cwd, include);
     });

@@ -1,11 +1,12 @@
 var NullDependency = require('webpack/lib/dependencies/NullDependency');
 
-function PushDependency(currentModule, requiredModules, expression) {
+function PushDependency(currentModule, requiredModules, filePath, expression) {
     NullDependency.call(this);
     this.Class = PushDependency;
     this.expression = expression;
     this.range = expression.range;
 
+    this.filePath = filePath;
     this.currentModule = currentModule;
     this.requiredModules = requiredModules;
 }
@@ -47,4 +48,6 @@ PushDependency.Template.prototype.apply = function(dep, source, outputOptions, r
 
     var sourceHeader = "__ngrequire_load__('{0}', {1});\n\n".f(dep.currentModule, moduleNames.join(', '));
     source.replace(dep.range[0], dep.range[1]-1, sourceHeader + "angular.module('{0}', [])".f(dep.currentModule));
+
+    console.log(dep.filePath);
 };
