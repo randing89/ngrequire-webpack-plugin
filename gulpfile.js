@@ -7,9 +7,12 @@ var shell = require('gulp-shell');
 var fs = require('fs-extra');
 var async = require('async');
 
+
 var ngRequirePlugin = require('./index');
 
 var webpackConf = require('./test/config/webpack.conf.js');
+var s = require('./src/string');
+
 
 var base = path.resolve(__dirname);
 var testFolder = base + '/test';
@@ -70,7 +73,8 @@ gulp.task('test', function(done) {
     _.each(fs.readdirSync(testFolder), function (fileName) {
         var filePath = path.join(testFolder, fileName);
 
-        if (fs.lstatSync(filePath).isFile()) {
+        if (fs.lstatSync(filePath).isFile() && !fileName.startsWith('.')) {
+
             var caseName = path.basename(fileName, '.js').replace(/spec_/g, '');
             tasks.push(pack.bind(null, caseName));
         }

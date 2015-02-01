@@ -41,6 +41,6 @@
     "webpack-dev-server": "^1.6.5"
   },
   "dependencies": {
-    "ngrequire": "^2.0.24"
+    "ngrequire": "^2.0.28"
   }
 }
