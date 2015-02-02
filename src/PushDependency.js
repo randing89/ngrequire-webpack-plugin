@@ -48,6 +48,4 @@ PushDependency.Template.prototype.apply = function(dep, source, outputOptions, r
 
     var sourceHeader = "__ngrequire_load__('{0}', {1});\n\n".f(dep.currentModule, moduleNames.join(', '));
     source.replace(dep.range[0], dep.range[1]-1, sourceHeader + "angular.module('{0}', [])".f(dep.currentModule));
-
-    console.log(dep.filePath);
 };
