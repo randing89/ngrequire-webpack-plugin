@@ -4,6 +4,8 @@ var PushDependency = require('./src/PushDependency');
 var ngrequire = require('ngrequire');
 var _ = require('lodash');
 var s = require('./src/string');
+var path = require('path');
+
 
 function apply(options, compiler) {
     // Clean cache
