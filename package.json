@@ -19,7 +19,7 @@
     "chai": "^1.9.2",
     "exports-loader": "^0.6.2",
     "fs-extra": "^0.16.3",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.0",
     "gulp-karma": "0.0.4",
     "gulp-shell": "^0.2.10",
     "gulp-webpack": "^1.0.0",
