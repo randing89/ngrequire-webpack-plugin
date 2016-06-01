@@ -2,7 +2,7 @@ var NullDependency = require('webpack/lib/dependencies/NullDependency');
 
 function PushDependency(currentModule, requiredModules, filePath, expression) {
     NullDependency.call(this);
-    this.Class = PushDependency;
+    this.constructor = PushDependency;
     this.expression = expression;
     this.range = expression.range;
 

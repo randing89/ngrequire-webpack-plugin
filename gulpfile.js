@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var path = require('path');
 var _ = require('lodash');
-var webpack = require('gulp-webpack');
-var karma = require('gulp-karma');
+var webpack = require('webpack-stream');
+var KarmaServer = require('karma').Server;
 var shell = require('gulp-shell');
 var fs = require('fs-extra');
 var async = require('async');
@@ -21,10 +21,10 @@ var fixtureFolder = testFolder + '/fixture';
 
 var paths = {
     test: [
-        'node_modules/angular/angular.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        'test/out/**/*.js',
-        'test/spec_*.js'
+        path.resolve(__dirname, 'node_modules/angular/angular.js'),
+        path.resolve(__dirname, 'node_modules/angular-mocks/angular-mocks.js'),
+        path.resolve(__dirname, 'test/out/**/*.js'),
+        path.resolve(__dirname, 'test/spec_*.js')
     ]
 };
 
@@ -81,12 +81,11 @@ gulp.task('test', function(done) {
     });
 
     async.parallel(tasks, function () {
-        gulp.src(paths.test, {read: false})
-            .pipe(karma({
-                configFile: './test/config/karma.conf.js',
-                action: 'run'
-            }))
-            .on('end', done);
+        new KarmaServer({
+            files: paths.test,
+            configFile: path.resolve(__dirname, './test/config/karma.conf.js'),
+            action: 'run'
+        }, done).start();
     });
 });
 

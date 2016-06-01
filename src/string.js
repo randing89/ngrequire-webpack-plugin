@@ -66,5 +66,9 @@ module.exports = {
         return (Object.prototype.toString.call(s) === '[object String]') ?
             (s.trim() === '') :
             (s === undefined || s === null);
-    }
+    },
+	
+	escapeSlashes: function (s) {
+		return s.replace(/\\/g, '\\\\');
+	}
 };
